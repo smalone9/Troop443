@@ -62,8 +62,8 @@ export default function RecordList() {
       return (
         <Record
           record={record}
-          deleteRecord={() => deleteRecord(record_id)}
-          key={record_id}
+          deleteRecord={() => deleteRecord(record._id)}
+          key={record._id}
         />
       );
     });
