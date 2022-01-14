@@ -19,6 +19,6 @@ module.exports = {
     });
   },
   getDb: function () {
-    return_db;
+    return _db;
   },
 };
