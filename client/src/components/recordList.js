@@ -29,7 +29,9 @@ export default function RecordList() {
   //method fetches records from db
   useEffect(() => {
     async function getRecords() {
-      const response = await fetch(`http://localhost:5000/record/`);
+      const response = await fetch(`http://localhost:5000/record/`, {
+        mode: "no-cors",
+      });
 
       if (!response.ok) {
         const message = `An error occurred: ${response.statusText}`;
