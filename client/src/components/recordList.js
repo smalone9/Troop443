@@ -9,7 +9,7 @@ const Record = (props) => (
     <td>
       <Link className="btn btn-link" to={`/edit/${props.record._id}`}>
         Edit
-      </Link>
+      </Link>{" "}
       |
       <button
         className="btn btn-link"
@@ -29,7 +29,7 @@ export default function RecordList() {
   //method fetches records from db
   useEffect(() => {
     async function getRecords() {
-      const response = await fetch(`http://localhost/5000/record/`);
+      const response = await fetch(`http://localhost:5000/record/`);
 
       if (!response.ok) {
         const message = `An error occurred: ${response.statusText}`;

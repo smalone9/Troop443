@@ -21,14 +21,14 @@ export default function Create() {
     e.preventDefault();
 
     //post requests adds new record to db
-    const newPerson = { ...form };
+    const newGirl = { ...form };
 
     await fetch("http://localhost:5000/record/add", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(newPerson),
+      body: JSON.stringify(newGirl),
     }).catch((error) => {
       window.alert(error);
       return;
