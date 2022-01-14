@@ -32,12 +32,12 @@ recordRoutes.route("/record/:id").get(function (req, res) {
 });
 
 //create a new record
-recordRoutes.route("/record/add").post(function (req, res) {
+recordRoutes.route("/record/add").post(function (req, response) {
   let db_connect = dbo.getDb();
   let myobj = {
-    girl_name: req.body.girl_name,
-    girl_contact: req.body.girl_contact,
-    girl_level: req.body.girl_level,
+    name: req.body.name,
+    contact: req.body.contact,
+    level: req.body.level,
   };
   db_connect.collection("records").insertOne(myobj, function (err, res) {
     if (err) throw err;
@@ -51,9 +51,9 @@ recordRoutes.route("/update/:id").post(function (req, response) {
   let myquery = { _id: ObjectId(req.params.id) };
   let newvalues = {
     $set: {
-      girl_name: req.body.girl_name,
-      girl_contact: req.body.girl_contact,
-      girl_level: req.body.girl_level,
+      name: req.body.name,
+      contact: req.body.contact,
+      level: req.body.level,
     },
   };
   db_connect
@@ -68,11 +68,11 @@ recordRoutes.route("/update/:id").post(function (req, response) {
 //delete a record
 recordRoutes.route("/:id").delete((req, response) => {
   let db_connect = dbo.getDb();
-  let myobj = { _id: ObjectId(req.params.id) };
-  db_connect.collection("records").deleteOne(myquery, function (err, res) {
+  let myquery = { _id: ObjectId(req.params.id) };
+  db_connect.collection("records").deleteOne(myquery, function (err, obj) {
     if (err) throw err;
     console.log("One Record Removed");
-    response.status(obj);
+    response.json(obj);
   });
 });
 
