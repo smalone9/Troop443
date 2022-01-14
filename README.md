@@ -1,7 +1,7 @@
 # Troop443
 MERN Play Build to help organize my co-leader duties for my daughter's Girl Scout troop
 
-![Image of Troop 443 Add Record](./screenshot.PNG)
+![Image of Troop 443 Add Record](./client/public/screenshot.PNG)
 
 
 ## Purpose
