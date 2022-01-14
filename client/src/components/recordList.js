@@ -9,7 +9,7 @@ const Record = (props) => (
     <td>
       <Link className="btn btn-link" to={`/edit/${props.record._id}`}>
         Edit
-      </Link>
+      </Link>{" "}
       |
       <button
         className="btn btn-link"
@@ -29,6 +29,7 @@ export default function RecordList() {
   //method fetches records from db
   useEffect(() => {
     async function getRecords() {
+      // debug issue with displaying records...<thread> not supported??
       const response = await fetch(`http://localhost:5000/record/`, {
         mode: "no-cors",
       });
@@ -78,7 +79,7 @@ export default function RecordList() {
         <thread>
           <tr>
             <th>Girl's Name</th>
-            <th>Position</th>
+            <th>position</th>
             <th>Level</th>
             <th>Action</th>
           </tr>
