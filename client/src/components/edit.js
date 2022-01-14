@@ -24,6 +24,13 @@ export default function Edit() {
         return;
       }
 
+      const record = await response.json();
+      if (!record) {
+        window.alert(`Record with id ${id} not found`);
+        navigate("/record/${params.id.toString()}");
+        return;
+      }
+
       setForm(record);
     }
 
