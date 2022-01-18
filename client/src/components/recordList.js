@@ -76,14 +76,14 @@ export default function RecordList() {
     <div>
       <h3>Troop 443 Record List</h3>
       <table className="table table-striped" style={{ marginTop: 20 }}>
-        <thread>
+        <thead>
           <tr>
             <th>Girl's Name</th>
             <th>position</th>
             <th>Level</th>
             <th>Action</th>
           </tr>
-        </thread>
+        </thead>
         <tbody>{recordList()}</tbody>
       </table>
     </div>
